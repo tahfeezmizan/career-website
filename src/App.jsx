@@ -37,4 +37,16 @@ function Tahfeez() {
   )
 }
 
+function User() {
+  const person = { name: 'Farabi', passion: 'Islam', workfor: 'Muhammad sollellahalahiacholom' }
+  const address = 'bangladesh';
+  return (
+    <div>
+      <h2>Welcome to React World</h2>
+      <p>Hi I'm {user.name}, I wark on {user.work}</p>
+    </div>
+  )
+}
+
+
 export default App
