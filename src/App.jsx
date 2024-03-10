@@ -3,14 +3,26 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Todu from './todu'
+import People from './Person'
+import Actors from './Actors'
+
 
 function App() {
+  const actors = ['jahed khan', 'soriful raj', 'Riaz', 'Sakib khan', 'Bappi'];
+
   return (
     <>
       <h1>Vite + React</h1>
+      <Actors name="Mojnu"></Actors>
 
+      {
+        actors.map(actor => <Actors name={actor} ></Actors>)
+      }
+
+      {/* <People></People>
       <Todu task="learn React" isDone={true}></Todu>
-      <Todu task="learn Redux" isDone={false}></Todu>
+      <Todu task="learn Redux" isDone={false}></Todu> */}
+
       {/* <Device name="Laptop" price="86000"></Device>
       <Device name="Mobile" price="2000"></Device>
       <Device name="Desktop Computer" price="100000"></Device>
@@ -44,23 +56,8 @@ function Random() {
   )
 }
 
-<<<<<<< HEAD
-function Device({name, price}){
+function Device({ name, price }) {
   return <h3>This Devices is {name}, and this price is {price}</h3>
 }
 
-=======
-function User() {
-  const person = { name: 'Farabi', passion: 'Islam', workfor: 'Muhammad sollellahalahiacholom' }
-  const address = 'bangladesh';
-  return (
-    <div>
-      <h2>Welcome to React World</h2>
-      <p>Hi I'm {user.name}, I wark on {user.work}</p>
-    </div>
-  )
-}
-
-
->>>>>>> 6fdfa8865911ca8e1b525cfbc455e89587d722e2
 export default App
