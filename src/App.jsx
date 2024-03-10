@@ -44,8 +44,23 @@ function Random() {
   )
 }
 
+<<<<<<< HEAD
 function Device({name, price}){
   return <h3>This Devices is {name}, and this price is {price}</h3>
 }
 
+=======
+function User() {
+  const person = { name: 'Farabi', passion: 'Islam', workfor: 'Muhammad sollellahalahiacholom' }
+  const address = 'bangladesh';
+  return (
+    <div>
+      <h2>Welcome to React World</h2>
+      <p>Hi I'm {user.name}, I wark on {user.work}</p>
+    </div>
+  )
+}
+
+
+>>>>>>> 6fdfa8865911ca8e1b525cfbc455e89587d722e2
 export default App
