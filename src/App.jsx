@@ -5,12 +5,16 @@ import './App.css'
 import Todu from './todu'
 import People from './Person'
 import Actors from './Actors'
+<<<<<<< HEAD
 import Singers from './Singer'
 import Teacher from './Teacher'
+=======
+>>>>>>> f512e7e5307f158496cf017e2f3286a69d0c66ac
 
 
 function App() {
   const actors = ['jahed khan', 'soriful raj', 'Riaz', 'Sakib khan', 'Bappi'];
+<<<<<<< HEAD
 
   const singers = [
     { name: 'Habib Wahid', age: 34 },
@@ -27,12 +31,16 @@ function App() {
     { name: 'Soton', subject: 'Geography' },
     { name: 'Palash', subject: 'Science' },
   ]
+=======
+>>>>>>> f512e7e5307f158496cf017e2f3286a69d0c66ac
 
   return (
     <>
       <h1>Vite + React</h1>
+      <Actors name="Mojnu"></Actors>
 
       {
+<<<<<<< HEAD
       teachers.map(teaching => <Teacher sir={teaching} ></Teacher>)
     }
 
@@ -46,6 +54,11 @@ function App() {
         actors.map(actor => <Actors name={actor} ></Actors>)
       } */}
 
+=======
+        actors.map(actor => <Actors name={actor} ></Actors>)
+      }
+
+>>>>>>> f512e7e5307f158496cf017e2f3286a69d0c66ac
       {/* <People></People>
       <Todu task="learn React" isDone={true}></Todu>
       <Todu task="learn Redux" isDone={false}></Todu> */}
