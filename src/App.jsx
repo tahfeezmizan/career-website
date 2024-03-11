@@ -34,15 +34,40 @@ function App() {
 =======
 >>>>>>> f512e7e5307f158496cf017e2f3286a69d0c66ac
 
+  function handleClick() {
+    alert('button click')
+  }
+
+  const clickHere = () => {
+    prompt('Hello')
+  }
+
+  // const getPoint = () => {
+  //   alert('Congratulation You Get point')
+  // }
+
+  const calculateOnPrompt = (num) => {
+    alert(num + 5)
+  }
+
   return (
     <>
       <h1>Vite + React</h1>
+      <div>
+        <button onClick={handleClick}>Click Me</button>
+        <button onClick={clickHere}>Click Here</button>
+        <button onClick={() => alert("Congratulation You Get point")}>Get Point</button>
+
+        {/* hard  */}
+        <button onClick={() => calculateOnPrompt(10)}>Click</button>
+      </div>
+
       <Actors name="Mojnu"></Actors>
 
       {
 <<<<<<< HEAD
-      teachers.map(teaching => <Teacher sir={teaching} ></Teacher>)
-    }
+        teachers.map(teaching => <Teacher sir={teaching} ></Teacher>)
+      }
 
       {
         singers.map(singer => <Singers singer={singer}></Singers>)
