@@ -1,0 +1,11 @@
+.custom-button {
+    background: linear-gradient(90.00deg, rgb(126, 144, 254), rgb(152, 115, 255) 100%);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.custom-button:hover {
+    background: linear-gradient(90.00deg, rgb(152, 115, 255), rgb(126, 144, 254) 100%);
+}

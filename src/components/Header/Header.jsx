@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import '../Job/Job.css'
 
 const Header = () => {
     const links = <>
@@ -22,7 +23,7 @@ const Header = () => {
                     <ul
                         className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-2">
                         {links}
-                        <button className="btn btn-active btn-primary">Primary</button>
+                        <button className="btn btn-active btn-primary">Star Applying</button>
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-3xl font-bold lexend">Career</a>
@@ -33,7 +34,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-active btn-primary">Primary</button>
+                <button className="btn custom-button">Star Applying</button>
             </div>
         </div>
     );
