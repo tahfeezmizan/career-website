@@ -1,5 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../Job/Job.css'
+import { saveJobApplication } from "../../utility/LocalStorage";
 
 const JobDetails = () => {
     const jobs = useLoaderData();
@@ -8,8 +11,11 @@ const JobDetails = () => {
     const job = jobs.find(job => job.id === idInt);
     const { job_description, job_responsibility, educational_requirements, job_title, salary, experiences, contact_information, } = job;
 
+    const handleApply = () => {
+        saveJobApplication(id)
+        toast("You Have Apply Sucessfully");
+    } 
 
-    console.log(job.job_title)
     return (
         <div className="w-full lg:w-11/12 xl:w-8/12 mx-auto px-4 md:px-6 lg:px-0 py-10">
 
@@ -18,9 +24,9 @@ const JobDetails = () => {
                     <p className="text-base font-medium"><span className="font-bold">Job Description:</span> {job_description}</p>
                     <p className="text-base font-medium"><span className="font-bold">Job Responsibility:</span> {job_responsibility}</p>
                     <p className="text-base font-medium"><span className="font-bold">Educational Requirements:</span>
-                    <br /> {educational_requirements}</p>
-                    <p className="text-base font-medium"><span className="font-bold">Experiences:</span> 
-                    <br />{experiences}</p>
+                        <br /> {educational_requirements}</p>
+                    <p className="text-base font-medium"><span className="font-bold">Experiences:</span>
+                        <br />{experiences}</p>
                 </div>
                 <div className="col-span-1">
                     <div className="p-8 jobDetailsBg mb-6">
@@ -29,10 +35,11 @@ const JobDetails = () => {
                         <p className="text-base font-medium"><span className="font-bold">Job Title:</span> {job_title}</p>
 
                         <h2>Contact Information</h2>
-                       
-                        
+
+
                     </div>
-                    <button className="btn w-full">Apply Now</button>
+                    <button onClick={handleApply} className="btn w-full">Apply Now</button>
+                    <ToastContainer />
                 </div>
             </div>
         </div>
