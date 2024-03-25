@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { IoLocationOutline } from "react-icons/io5";
+import { AiOutlineDollar } from "react-icons/ai";
 import './Job.css'
 
 const Job = ({ job }) => {
-    const { logo, job_title, company_name, remote_or_onsite, location, salary, job_type } = job
+    const { id, logo, job_title, company_name, remote_or_onsite, location, salary, job_type } = job
     return (
         <div className="p-10 border border-gray-200 rounded-md">
             <img className="mb-8" src={logo} alt="" />
@@ -12,12 +14,12 @@ const Job = ({ job }) => {
                 <button className="btn btn-outline">{remote_or_onsite}</button>
                 <button className="btn btn-outline">{job_type}</button>
             </div>
-            <div className=" flex gap-10">
-                <p>{location}</p>
-                <p>{salary}</p>
+            <div className=" flex gap-6">
+                <p className="flex items-center gap-2"><IoLocationOutline className="text-xl" /> {location}</p>
+                <p className="flex items-center gap-2"><AiOutlineDollar className="text-xl" /> {salary}</p>
             </div>
 
-            <NavLink className="btn custom-button text-white" >View Details</NavLink>
+            <NavLink to={`/job/${id}`} className="btn custom-button text-white" >View Details</NavLink>
         </div>
     );
 };

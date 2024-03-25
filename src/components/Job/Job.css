@@ -9,3 +9,7 @@
 .custom-button:hover {
     background: linear-gradient(90.00deg, rgb(152, 115, 255), rgb(126, 144, 254) 100%);
 }
+
+.jobDetailsBg {
+    background: linear-gradient(90.00deg, rgba(126, 144, 254, 0.1), rgba(152, 115, 255, 0.1) 100%);
+}
