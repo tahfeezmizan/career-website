@@ -7,8 +7,8 @@ import './Job.css'
 const Job = ({ job }) => {
     const { id, logo, job_title, company_name, remote_or_onsite, location, salary, job_type } = job
     return (
-        <div className="p-10 border border-gray-200 rounded-md">
-            <img className="mb-8 w-40 h-auto rounded" src={logo} alt="" />
+        <div className="p-10 space-y-4 border border-gray-200 rounded-md">
+            <img className=" w-40 h-auto rounded" src={logo} alt="" />
             <h2>{job_title}</h2>
             <p>{company_name}</p>
             <div className=" flex gap-5">
