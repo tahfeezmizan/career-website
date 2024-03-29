@@ -1,12 +1,26 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import { getStoredApplication } from "../../utility/LocalStorage";
-import AppliedJobsDetails from "./AppliedJobsDetails";
+import JobApplidedDetails from "./JobApplidedDetails";
 
 const AppiliedJobs = () => {
     const jobs = useLoaderData();
     const [appliedJobs, setApplidJobs] = useState([]);
-    // const [job_title, company_name] = appliedJobs;
+    const [displayJobs, setDisplayJobs] = useState([]);
+
+    const handleFilter = filter => {
+        if (filter === 'All') {
+            setDisplayJobs(appliedJobs);
+        }
+        else if (filter === 'remote') {
+            const remoteJob = appliedJobs.filter(job => job.remote_or_onsite === "Remote");
+            setDisplayJobs(remoteJob)
+        } else if(filter === 'Onsite'){
+            const onSiteJobs = appliedJobs.filter(job => job.remote_or_onsite === "Onsite");
+            setDisplayJobs(onSiteJobs)
+        }
+    }
 
 
     useEffect(() => {
@@ -24,22 +38,31 @@ const AppiliedJobs = () => {
                 }
             }
             setApplidJobs(jobsApplide);
-            
-            console.log(appliedJobs.length)
-            // console.log(jobs, storedJobId, jobsApplide)
+            setDisplayJobs(jobsApplide)
         }
     }, []);
 
 
     return (
-        <div>
-            <h1>Toto appled Job{appliedJobs.length}</h1>
+        <div className="w-full md:w-8/12 mx-auto">
+            <Helmet>
+                <title>Job Details | Career Hub</title>
+            </Helmet>
+            <h1 className="text-5xl text-center py-10">Applied Jobs</h1>
+            <div className="py-6 flex justify-end">
+                <details className="dropdown ">
+                    <summary className="m-1 btn">Filter By</summary>
+                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                        <li onClick={() => handleFilter('All')}><a>All</a></li>
+                        <li onClick={() => handleFilter('remote')}><a>Remote</a></li>
+                        <li onClick={() => handleFilter('Onsite')}><a>OnSite</a></li>
+                    </ul>
+                </details>
+            </div>
 
-        <ul>
             {
-                appliedJobs.map(job => <AppliedJobsDetails key={job.id} job={job}></AppliedJobsDetails>)
+                displayJobs.map(job => <JobApplidedDetails job={job} key={job.id}></JobApplidedDetails>)
             }
-        </ul>
         </div>
     );
 };

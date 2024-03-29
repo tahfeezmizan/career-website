@@ -7,11 +7,6 @@ const Header = () => {
         <li><NavLink to='/statistics'>Statistics</NavLink></li>
         <li><NavLink to='/appliedjobs'>Applied Jobs</NavLink></li>
         <li><NavLink to='/blog'>Blog</NavLink></li>
-
-        {/* <li className="text-lg font-medium opacity-70 hover:bg-transparent">NavLink</li>
-        <li className="text-lg font-medium opacity-70 hover:bg-transparent">Recipes </li>
-        <li className="text-lg font-medium opacity-70 hover:bg-transparent">About </li>
-        <li className="text-lg font-medium opacity-70 hover:bg-transparent">Search </li> */}
     </>
     return (
         <div className="navbar w-full lg:w-11/12 xl:w-8/12 mx-auto px-4 md:px-6 lg:px-0 py-10">

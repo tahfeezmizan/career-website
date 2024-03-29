@@ -14,11 +14,10 @@ const JobDetails = () => {
     const handleApply = () => {
         saveJobApplication(idInt)
         toast("You Have Apply Sucessfully");
-    } 
+    }
 
     return (
         <div className="w-full lg:w-11/12 xl:w-8/12 mx-auto px-4 md:px-6 lg:px-0 py-10">
-
             <div className="grid grid-cols-4 gap-6">
                 <div className="col-span-3">
                     <p className="text-base font-medium"><span className="font-bold">Job Description:</span> {job_description}</p>
@@ -31,12 +30,13 @@ const JobDetails = () => {
                 <div className="col-span-1">
                     <div className="p-8 jobDetailsBg mb-6">
                         <h2>Job Details</h2>
-                        <p className="text-base font-medium"><span className="font-bold">Salary:</span> {salary}</p>
-                        <p className="text-base font-medium"><span className="font-bold">Job Title:</span> {job_title}</p>
-
+                        <p className="text-base font-medium">
+                            <span className="font-bold">Salary:</span> {salary}
+                        </p>
+                        <p className="text-base font-medium">
+                            <span className="font-bold">Job Title:</span> {job_title}
+                        </p>
                         <h2>Contact Information</h2>
-
-
                     </div>
                     <button onClick={handleApply} className="btn w-full">Apply Now</button>
                     <ToastContainer />

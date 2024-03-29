@@ -2,7 +2,8 @@ import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
 import Job from '../Job/Job';
 import { NavLink } from 'react-router-dom';
-// import '../Job/Job.css'
+import { Helmet } from 'react-helmet-async';
+import '../Job/Job.css'
 
 const FeaturedJobs = () => {
     const [jobs, setJobs] = useState([]);
@@ -14,9 +15,11 @@ const FeaturedJobs = () => {
             .then(data => setJobs(data))
     }, [])
 
-
     return (
         <div className='w-full lg:w-11/12 xl:w-8/12 mx-auto px-4 md:px-6 lg:px-0 py-10'>
+            <Helmet>
+                <title>Feature Job | Career Hub</title>
+            </Helmet>
             <div className="text-center mb-8">
                 <h2 className='text-5xl pb-4 font-bold'>Featured Jobs</h2>
                 <p className=''>Explore thousands of job opportunities with all the information you need. Its your future</p>
